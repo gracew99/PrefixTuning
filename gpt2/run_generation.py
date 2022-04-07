@@ -841,8 +841,8 @@ def main():
                 assert False,  "eval_dataset needs to be [valid, test]"
             prompt_text_dict = read_webnlg_files(test_path, tokenizer)
         elif args.task_mode == 'triples':
-            test_path = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-test.json"
-            # test_path = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-dev.json"
+            test_path = "/content/drive/MyDrive/PrefixTuning/DART/dart/data/v1.1.1/dart-v1.1.1-full-test.json"
+            # test_path = "/content/drive/MyDrive/PrefixTuning/DART/dart/data/v1.1.1/dart-v1.1.1-full-dev.json"
             prompt_text_dict = read_triples_files(test_path, tokenizer)
 
         if QUICK_CHECK:
@@ -1331,7 +1331,7 @@ def main():
         out_file_eval = curr_dir + '_eval'
         print(out_file_eval, '\n', gold_dir, '\n', curr_dir)
         tagging = os.path.basename(curr_dir)
-        os.system("bash /u/scr/xlisali/DART/dart/evaluation/run_eval_on_webnlg.sh "
+        os.system("bash /content/drive/MyDrive/PrefixTuning/DART/dart/evaluation/run_eval_on_webnlg.sh "
                   "{} {} >> {}".format(curr_dir, tagging, out_file_eval))
 
 
